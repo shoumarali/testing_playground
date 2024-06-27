@@ -11,6 +11,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.ArgumentCaptor;
+import org.mockito.Mock;
 import org.mockito.Mockito;
 
 import java.util.List;
@@ -55,6 +56,7 @@ public class LoginUseCaseSyncTest {
         List<String> captures = ac.getAllValues();
         assertThat(captures.get(0), is(USERNAME));
         assertThat(captures.get(1), is(PASSWORD));
+
     }
 
     @Test

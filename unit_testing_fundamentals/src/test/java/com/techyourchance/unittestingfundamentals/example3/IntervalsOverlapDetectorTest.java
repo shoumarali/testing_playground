@@ -88,4 +88,5 @@ public class IntervalsOverlapDetectorTest {
         boolean result = SUT.isOverlap(interval1, interval2);
         assertThat(result, is(false));
     }
+
 }
