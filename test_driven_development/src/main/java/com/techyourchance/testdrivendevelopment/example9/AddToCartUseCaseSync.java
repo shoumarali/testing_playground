@@ -10,7 +10,8 @@ public class AddToCartUseCaseSync {
     public enum UseCaseResult {
         SUCCESS,
         FAILURE,
-        NETWORK_ERROR;
+        NETWORK_ERROR,
+        GENERAL_ERROR
     }
 
     private final AddToCartHttpEndpointSync mAddToCartHttpEndpointSync;
@@ -32,8 +33,9 @@ public class AddToCartUseCaseSync {
             case SUCCESS:
                 return UseCaseResult.SUCCESS;
             case AUTH_ERROR:
-            case GENERAL_ERROR:
                 return UseCaseResult.FAILURE;
+            case GENERAL_ERROR:
+                return UseCaseResult.GENERAL_ERROR;
             default:
                 throw new RuntimeException("invalid endpoint result: " + result);
         }
